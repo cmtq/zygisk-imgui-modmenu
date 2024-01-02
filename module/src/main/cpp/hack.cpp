@@ -72,6 +72,38 @@ EGLBoolean hook_eglSwapBuffers(EGLDisplay dpy, EGLSurface surface) {
     return old_eglSwapBuffers(dpy, surface);
 }
 
+void MyButtonMenu()
+{
+    if (ImGui::Button("Option 1"))
+    {
+        // Action for Option 1
+    }
+
+    if (ImGui::Button("Option 2"))
+    {
+        // Action for Option 2
+    }
+
+    if (ImGui::Button("Option 3"))
+    {
+        // Action for Option 3
+    }
+}
+
+// Inside your main loop or where ImGui is being used:
+// ...
+
+// Call the function that contains your button menu
+void RenderGUI()
+{
+    ImGui::Begin("Button Menu");
+
+    MyButtonMenu(); // Call your button menu function
+
+    ImGui::End();
+}
+
+
 void hack_start(const char *_game_data_dir) {
     LOGI("hack start | %s", _game_data_dir);
     do {
