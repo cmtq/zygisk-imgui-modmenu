@@ -3,6 +3,7 @@
 
 // TODO: change this
 #define TargetLibName "libil2cpp.so"
+#define TargetLibName "libxigncode.so"
 #define GamePackageName "com.asobimo.toramonline"
 
 #endif //ZYGISK_IMGUI_MODMENU_GAME_H
