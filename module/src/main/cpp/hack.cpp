@@ -112,7 +112,7 @@ void hack_start(const char *_game_data_dir) {
     } while (g_TargetModule.size <= 0);
     LOGI("%s: %p - %p",TargetLibName, g_TargetModule.start_address, g_TargetModule.end_address);
 
-    // TODO: hooking/patching here
+    PATCH_LIB("libxigncode.so", "0x181C8", "51 00 00 58 20 02 1F D6");
     
 }
 
