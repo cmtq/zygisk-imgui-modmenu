@@ -47,6 +47,24 @@ void SetupImGui() {
     ImGui::GetStyle().ScaleAllSizes(3.0f);
 }
 
+void MyButtonMenu()
+{
+    if (ImGui::Button("Option 1"))
+    {
+        // Action for Option 1
+    }
+
+    if (ImGui::Button("Option 2"))
+    {
+        // Action for Option 2
+    }
+
+    if (ImGui::Button("Option 3"))
+    {
+        // Action for Option 3
+    }
+}
+
 void RenderGUI()
 {
     ImGui::Begin("Button Menu");
@@ -82,23 +100,7 @@ EGLBoolean hook_eglSwapBuffers(EGLDisplay dpy, EGLSurface surface) {
     return old_eglSwapBuffers(dpy, surface);
 }
 
-void MyButtonMenu()
-{
-    if (ImGui::Button("Option 1"))
-    {
-        // Action for Option 1
-    }
 
-    if (ImGui::Button("Option 2"))
-    {
-        // Action for Option 2
-    }
-
-    if (ImGui::Button("Option 3"))
-    {
-        // Action for Option 3
-    }
-}
 
 // Inside your main loop or where ImGui is being used:
 // ...
