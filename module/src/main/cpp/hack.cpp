@@ -47,6 +47,7 @@ void SetupImGui() {
     ImGui::GetStyle().ScaleAllSizes(3.0f);
 }
 
+EGLBoolean (*old_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
 EGLBoolean hook_eglSwapBuffers(EGLDisplay dpy, EGLSurface surface) {
     eglQuerySurface(dpy, surface, EGL_WIDTH, &g_GlWidth);
     eglQuerySurface(dpy, surface, EGL_HEIGHT, &g_GlHeight);
