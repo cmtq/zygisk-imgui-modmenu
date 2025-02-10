@@ -47,6 +47,16 @@ void SetupImGui() {
     ImGui::GetStyle().ScaleAllSizes(3.0f);
 }
 
+void RenderGUI()
+{
+    ImGui::Begin("Button Menu");
+
+    MyButtonMenu(); // Call your button menu function
+
+    ImGui::End();
+}
+
+
 EGLBoolean (*old_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
 EGLBoolean hook_eglSwapBuffers(EGLDisplay dpy, EGLSurface surface) {
     eglQuerySurface(dpy, surface, EGL_WIDTH, &g_GlWidth);
@@ -94,14 +104,6 @@ void MyButtonMenu()
 // ...
 
 // Call the function that contains your button menu
-void RenderGUI()
-{
-    ImGui::Begin("Button Menu");
-
-    MyButtonMenu(); // Call your button menu function
-
-    ImGui::End();
-}
 
 
 void hack_start(const char *_game_data_dir) {
