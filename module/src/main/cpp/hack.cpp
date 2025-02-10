@@ -72,6 +72,38 @@ EGLBoolean hook_eglSwapBuffers(EGLDisplay dpy, EGLSurface surface) {
     return old_eglSwapBuffers(dpy, surface);
 }
 
+void MyButtonMenu()
+{
+    if (ImGui::Button("Option 1"))
+    {
+        // Action for Option 1
+    }
+
+    if (ImGui::Button("Option 2"))
+    {
+        // Action for Option 2
+    }
+
+    if (ImGui::Button("Option 3"))
+    {
+        // Action for Option 3
+    }
+}
+
+// Inside your main loop or where ImGui is being used:
+// ...
+
+// Call the function that contains your button menu
+void RenderGUI()
+{
+    ImGui::Begin("Button Menu");
+
+    MyButtonMenu(); // Call your button menu function
+
+    ImGui::End();
+}
+
+
 void hack_start(const char *_game_data_dir) {
     LOGI("hack start | %s", _game_data_dir);
     do {
@@ -80,7 +112,7 @@ void hack_start(const char *_game_data_dir) {
     } while (g_TargetModule.size <= 0);
     LOGI("%s: %p - %p",TargetLibName, g_TargetModule.start_address, g_TargetModule.end_address);
 
-    // TODO: hooking/patching here
+    PATCH_LIB("libxigncode.so", "0x181C8", "51 00 00 58 20 02 1F D6");
     
 }
 
